@@ -16,9 +16,9 @@ learning_rate = float(learning_rate)
 print("------")
 print('Enter the starting weight:') #usually this is randomized?
 weight = input()
-weight = float(learning_rate)
+weight = float(weight) #in the video this is set to be 0.8 I believe
 
-inputlayer = 1.5
+inputlayer = 1.5 #Can also edit to change these if desired
 desired_output = 0.5
 
 
