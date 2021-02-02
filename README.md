@@ -12,3 +12,9 @@ Include bias.
 
 ** UnderstandingBackpropogation2wSigmoid.py **
 Include bias and a sigmoid activation function.
+
+** RecurrentNeuralNetworkCryptocurrency.py **
+Cryptocurrency price prediction model, using a recurrent neural network.
+Based on the previous 60 minutes of the price of a cryptocurrency, determine its price in 3 minutes.
+Therefore, determine a buy/not buy strategy.
+This code follows Sentdex's tutorial: https://www.youtube.com/watch?v=ne-dpRdNReI
