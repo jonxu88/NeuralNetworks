@@ -24,6 +24,7 @@ for i in range(epochs):
     weights = weights - learning_rate * dC_dw
     print('Epoch: ' + str(i+1) + ', Weights:' + str(weights) + ', Loss:' + str(C))
 
+#Note this example there are many weights along a line for which the loss is minimised
 
 
     
