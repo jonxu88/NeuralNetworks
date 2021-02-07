@@ -6,52 +6,25 @@
 
 
 #Should use numpy since we are using matrices
-#import math and define the sigmoid function
+#import
 import math
+import numpy as np
 
-def sigmoid(x):
-    return 1 / (1 + math.exp(-x))
+#Forget about asking for user inputs, let's just have constants in the beginning of the code
+x_train = np.array([1.5, 0.5])
+weights = np.array([0.8, 0.7])
+y_train = 0.5
+epochs = 10
+learning_rate= 0.1
 
-
-
-print("-----")
-print('Enter the input sample (set to 1.5 in the video):')
-inputlayer = input()
-inputlayer = float(inputlayer)
-
-print("-----")
-print('Enter the desired output (set to 0.5 in the video):')
-desired_output = input()
-desired_output = float(desired_output)
-
-print("------")
-print('Enter the starting weight:') #usually this is randomized?
-weight = input()
-weight = float(weight) #in the video this is set to be 0.8 I believe
-
-print("------")
-print('Enter the starting bias:') #usually this is randomized
-bias = input()
-bias = float(bias) 
-
-print("-----")
-print('Enter the number of iterations:') #what is the machine learning term for 'number of iterations?'
-iterations = input()
-iterations = int(iterations)
-
-print("-----")
-print('Enter the learning rate:')
-learning_rate = input()
-learning_rate = float(learning_rate)
+for i in range(epochs):
+    C = (x_train @ np.transpose(weights) - y_train)**2 #This is the cost function. The symbol @ is shorthand for matrix multiplication
+    dC_dw = np.array(2*x_train[0]*(weights[0]*x_train[0]+weights[1]*x_train[1]-y_train), 
+    2*x_train[1]*(weights[0]*x_train[0]+weights[1]*x_train[1]-y_train) )
+    weights = weights - learning_rate * dC_dw
+    print('Epoch: ' + str(i+1) + ', Weights:' + str(weights) + ', Loss:' + str(C))
 
 
-for i in range(iterations):
-    z = weight * inputlayer + bias
-    dC_dw = 2 * inputlayer * (sigmoid(z) - desired_output) * sigmoid(z) * (1-sigmoid(z))
-    dC_db = 2 * (sigmoid(z) - desired_output)* sigmoid(z) * (1-sigmoid(z))
-    weight = weight - learning_rate * dC_dw
-    bias = bias - learning_rate * dC_db 
-    cost = (sigmoid(z)- desired_output )**2
-    print('Iteration Number: ' + str(i+1) + ', Weight:' + str(weight) + ', Bias:' + str(bias) + ', Cost:' + str(cost))
+
     
 
