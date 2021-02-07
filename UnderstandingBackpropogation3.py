@@ -1,4 +1,3 @@
-#NOT YET FINISHED
 #Goal: To code the backpropogation for the following neural network:
 #One input layer with two neurons, one output layer with one neuron, and no biases
 #Note to self: Use github version control properly for this file
