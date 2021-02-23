@@ -18,7 +18,7 @@ There is only one input layer (with one neuron),
 one output layer with one neuron, and no bias or activation function.
 
 ** UnderstandingBackpropogation2.py **
-Include bias.
+Includes bias.
 
 ** UnderstandingBackpropogation2wSigmoid.py **
 Include bias and a sigmoid activation function.
