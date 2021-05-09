@@ -2,6 +2,7 @@
 # I coded the backpropogation for the simplest neural network.
 #There is only one input layer (with one neuron),
 # one output layer with one neuron, and no bias or activation function.
+# Testing branching for Git 9/5/2021...
 
 print("-----")
 print('Enter the input sample (set to 1.5 in the video):')
